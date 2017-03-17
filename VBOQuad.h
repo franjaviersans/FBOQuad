@@ -4,30 +4,26 @@
 //
 // Complete history on bottom of file
 
-#ifndef FBOQuad_H
-#define FBOQuad_H
+#ifndef VBOQuad_H
+#define VBOQuad_H
 
-#define WORLD_COORD_LOCATION	0
-#define COLOR_COORD_LOCATION	1
-#define NORMAL_COORD_LOCATION	2
-#define TEXTURE_COORD_LOCATION	3
 
 /**
-* Class FBOQuad.
-* Creates a Quad using FBO with the corresponding texture coordinates
+* Class VBOQuad.
+* Creates a Quad using VBO with the corresponding texture coordinates
 *
 *           (-0.5,0.5)*------*(0.5,0.5)
-*					  |		 |
-*					  |      |
+*                     |      |
+*                     |      |
 *          (-0.5,-0.5)*------*(0.5,-0.5)
 */
-class FBOQuad
+class VBOQuad
 {
 	//Functions
 
 	public:
 		///Default destructor
-		~FBOQuad();
+		~VBOQuad();
 
 		///Method to Draw the Quad
 		void Draw();
@@ -42,21 +38,20 @@ class FBOQuad
 		void Stop();
 
 		///Creates an instance of the model
-		static FBOQuad* Instance() ;
+		static VBOQuad & Instance() ;
 
 	private:
 		///Default constructor
-		FBOQuad();
+		VBOQuad();
 
 
 	//Variables
 
 	private:
-		static FBOQuad * m_quad;
 		GLuint m_iVBO;
 		GLuint m_iVBOIndex;
 		GLuint m_iVAO;
 };
 
 
-#endif //FBOQuad_H
+#endif //VBOQuad_H
